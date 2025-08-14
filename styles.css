@@ -1,0 +1,100 @@
+:root{
+  --bg:#f6f9ff;
+  --card:#ffffff;
+  --primary:#4D6BFE;
+  --text:#1f2937;
+  --muted:#666;
+  --radius:12px;
+  --container:1100px;
+  font-family: 'Poppins', system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+}
+
+*{box-sizing:border-box}
+body{
+  margin:0; background:var(--bg); color:var(--text); -webkit-font-smoothing:antialiased;
+  line-height:1.5;
+}
+.container{max-width:var(--container); margin:0 auto; padding:0 18px;}
+
+/* Header */
+.site-header{background:transparent; position:sticky; top:0; z-index:60; backdrop-filter: blur(6px);}
+.header-inner{display:flex; align-items:center; justify-content:space-between; padding:14px 0;}
+
+/* Brand text only */
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.brand-text div {
+  font-weight: 600;
+  font-size: 18px;
+  color: var(--text);
+}
+.brand-text small {
+  display: block;
+  font-size: 12px;
+  color: var(--muted);
+}
+
+/* nav */
+.nav{display:flex; gap:14px; align-items:center;}
+.nav a{text-decoration:none; color:var(--text); padding:6px 8px; border-radius:8px; font-weight:600; font-size:15px;}
+.nav a:hover{background:rgba(77,107,254,0.08); color:var(--primary);}
+.menu-toggle{display:none; background:none; border:0; font-size:20px; cursor:pointer;}
+
+/* Hero */
+.hero{padding:72px 0; background:linear-gradient(120deg,var(--primary) 0%, #8E83FF 60%); color:#fff; border-bottom-left-radius:28px; border-bottom-right-radius:28px;}
+.hero-inner{max-width:900px;}
+.hero h1{font-size:40px; margin:0 0 8px; line-height:1.05;}
+.lead{opacity:0.95; margin:0 0 12px; font-weight:600}
+.hero p{margin:8px 0 16px;}
+.btn{display:inline-block; background:#fff; color:var(--primary); padding:10px 18px; border-radius:10px; text-decoration:none; font-weight:700;}
+.btn.secondary{background:transparent; border:1px solid rgba(0,0,0,0.08); color:var(--text);}
+
+/* Sections */
+.section{padding:48px 0;}
+.section h2{margin-top:0; font-size:22px;}
+.timeline{list-style:none; padding:0; margin:12px 0 0;}
+.timeline li{background:var(--card); padding:12px; border-radius:10px; margin-bottom:8px; box-shadow:0 6px 16px rgba(12,20,40,0.06);}
+
+/* Card */
+.card{background:var(--card); padding:12px; border-radius:12px; box-shadow:0 6px 16px rgba(12,20,40,0.06);}
+
+/* RSVP form layout improvements */
+.rsvp-form{display:grid; gap:10px; max-width:700px;}
+@media(min-width:720px){
+  .rsvp-form{grid-template-columns: 1fr 1fr; align-items:start;}
+  .rsvp-form .form-row:nth-child(5){grid-column: 1 / -1;} /* message spans full width */
+  .form-actions{grid-column:1 / -1; display:flex; gap:8px;}
+}
+.rsvp-form .form-row{display:flex; flex-direction:column;}
+.rsvp-form label{font-weight:600; margin-bottom:6px;}
+.rsvp-form input,
+.rsvp-form textarea{
+  padding:10px; border-radius:8px; border:1px solid rgba(0,0,0,0.08); font-size:14px;
+}
+.form-actions button{cursor:pointer;}
+.rsvp-list{margin-top:16px; font-size:14px; color:var(--muted)}
+
+/* Countdown timer */
+.timer {
+  font-size: 1.8rem;
+  font-weight: 700;
+  text-align: center;
+  margin: 20px 0;
+}
+
+/* Footer */
+.site-footer{padding:18px 0; text-align:center; font-size:13px; color:var(--muted);}
+
+/* Responsive */
+@media (max-width: 900px){
+  .hero h1{font-size:32px;}
+}
+@media (max-width: 720px){
+  .nav{display:none;}
+  .menu-toggle{display:block;}
+  .nav.open{display:flex; position:absolute; top:64px; left:0; right:0; background:rgba(255,255,255,0.98); padding:12px; flex-direction:column; gap:8px; border-radius:8px;}
+  .header-inner{position:relative;}
+}

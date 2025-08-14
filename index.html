@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>CHESA Inauguration</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <!-- Brand text only (logo removed) -->
+      <div class="brand">
+        <div class="brand-text">
+          <div>Government Polytechnic College, Palakkad</div>
+          <small>Dept. of Computer Hardware Engineering — CHESA</small>
+        </div>
+      </div>
+
+      <nav class="nav" aria-label="Main navigation">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#countdown">Countdown</a>
+        <a href="#rsvp">Participate</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <button class="menu-toggle" aria-label="Toggle menu">☰</button>
+    </div>
+  </header>
+
+  <main>
+    <section id="home" class="hero">
+      <div class="container hero-inner">
+        <h1>CHESA Inauguration</h1>
+        <p class="lead">Join us on <strong>August 14, 2025</strong> at <strong>10:00 AM</strong><br/>Library block,GPC Palakkad</p>
+        <p>Celebrate the launch of CHESA — Cultural Programs, Speeches, and Refreshments.</p>
+        <a class="btn" href="#rsvp">Participate & RSVP</a>
+      </div>
+    </section>
+
+    <section id="about" class="section">
+      <div class="container">
+        <h2>About CHESA</h2>
+        <p>Community & Higher Education Students Association (CHESA) is the student body of the Department of Computer Hardware Engineering at GPTC Palakkad. Our aim is to foster technical skills, community bonding, and academic collaboration among our students and faculty.</p>
+      </div>
+    </section>
+
+    <section id="countdown" class="section">
+      <div class="container">
+        <h2>Countdown to Inauguration</h2>
+        <div id="timer" class="timer"></div>
+      </div>
+    </section>
+
+    <!-- Gallery removed as requested -->
+
+    <section id="rsvp" class="section rsvp">
+      <div class="container">
+        <h2>Participate — RSVP</h2>
+
+        <!-- RSVP form (id matches script.js) -->
+        <form id="rsvpForm" class="rsvp-form" novalidate>
+          <div class="form-row">
+            <label for="name">Full name *</label>
+            <input id="name" name="name" type="text" required placeholder="Your name">
+          </div>
+
+          <div class="form-row">
+            <label for="email">Email *</label>
+            <input id="email" name="email" type="email" required placeholder="you@example.com">
+          </div>
+
+          <div class="form-row">
+            <label for="phone">Phone</label>
+            <input id="phone" name="phone" type="tel" placeholder="optional">
+          </div>
+
+          <div class="form-row">
+            <label for="guests">Guests</label>
+            <input id="guests" name="guests" type="number" min="0" value="0">
+          </div>
+
+          <div class="form-row">
+            <label for="message">Message (optional)</label>
+            <textarea id="message" name="message" rows="3" placeholder="Any notes or dietary needs"></textarea>
+          </div>
+
+          <div class="form-actions">
+            <button class="btn" type="submit">Send RSVP</button>
+            <button type="button" id="downloadBtn" class="btn secondary">Download CSV</button>
+          </div>
+        </form>
+
+        <!-- RSVP list (rendered from localStorage) -->
+        <div id="rsvpList" class="rsvp-list" aria-live="polite" style="margin-top:18px;"></div>
+      </div>
+    </section>
+
+    <section id="contact" class="section">
+      <div class="container">
+        <h2>Contact</h2>
+        <p>Government Polytechnic College, Palakkad<br/>
+           Dept. of Computer Hardware Engineering</p>
+        <p>Address: Kodumbu PO, Palakkad, Kerala – 678551<br/>
+           Phone: 0491 257 2640<br/>
+           Email: info@gptcpalakkad.ac.in</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">© CHESA 2025 — Government Polytechnic College, Palakkad</div>
+  </footer>
+
+  <script src="script.js" defer></script>
+</body>
+</html>
